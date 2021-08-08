@@ -3,3 +3,4 @@ dist/
 coverage/
 types/
 junit.xml
+.project
