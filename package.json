@@ -3,7 +3,7 @@
   "version": "0.0.0-development",
   "description": "Simple named url patterns in Javascript",
   "main": "dist/index.js",
-  "repository": "git@github.com:tricoder42/named-urls.git",
+  "repository": "git@github.com:kennedykori/named-urls.git",
   "author": "Tomáš Ehrlich <tomas.ehrlich@gmail.com>",
   "license": "MIT",
   "scripts": {
