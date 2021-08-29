@@ -238,18 +238,18 @@ export default {
 
 [MIT][License]
 
-[Badge-CI]: https://img.shields.io/circleci/project/github/tricoder42/named-urls/master.svg
-[Badge-Coverage]: https://img.shields.io/codecov/c/github/tricoder42/named-urls/master.svg
-[Badge-License]: https://img.shields.io/github/license/tricoder42/named-urls.svg
-[Badge-Watch]: https://img.shields.io/github/watchers/tricoder42/named-urls.svg?style=social&label=Watch
+[Badge-CI]: https://circleci.com/gh/kennedykori/named-urls/tree/master.svg?style=shield
+[Badge-Coverage]: https://codecov.io/gh/kennedykori/named-urls/branch/master/graph/badge.svg?token=Y8Q2C7XAGP
+[Badge-License]: https://img.shields.io/github/license/kennedykori/named-urls.svg
+[Badge-Watch]: https://img.shields.io/github/watchers/kennedykori/named-urls.svg?style=social&label=Watch
 [Badge-Stars]: https://img.shields.io/github/stars/tricoder42/named-urls.svg?style=social&label=Stars
-[Badge-Twitter]: https://img.shields.io/twitter/url/https/github.com/tricoder42/named-urls.svg?style=social
+[Badge-Twitter]: https://img.shields.io/twitter/url/https/github.com/kennedykori/named-urls.svg?style=social
 [Badge-PRWelcome]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
 
-[CI]: https://circleci.com/gh/tricoder42/named-urls/tree/master
-[Coverage]: https://codecov.io/gh/tricoder42/named-urls
-[License]: https://github.com/tricoder42/named-urls/blob/master/LICENSE
-[Watch]: https://github.com/tricoder42/named-urls/watchers
-[Star]: https://github.com/tricoder42/named-urls/stargazers
-[Twitter]: https://twitter.com/intent/tweet?text=Check%20out%20named-urls!%20https://github.com/tricoder42/named-urls%20%F0%9F%91%8D
+[CI]: https://circleci.com/gh/kennedykori/named-urls/tree/master
+[Coverage]: https://codecov.io/gh/kennedykori/named-urls
+[License]: https://github.com/kennedykori/named-urls/blob/master/LICENSE
+[Watch]: https://github.com/kennedykori/named-urls/watchers
+[Star]: https://github.com/kennedykori/named-urls/stargazers
+[Twitter]: https://twitter.com/intent/tweet?text=Check%20out%20named-urls!%20https://github.com/kennedykori/named-urls%20%F0%9F%91%8D
 [PRWelcome]: http://makeapullrequest.com

@@ -1,43 +1,60 @@
-# Javascript Node CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-javascript/ for more details
-#
-version: 2
+version: 2.1
+orbs:
+  codecov: codecov/codecov@3.0.0
+  node: circleci/node@4.7.0
 jobs:
-  build:
+  release:
     docker:
-      - image: circleci/node:latest
-
-    working_directory: ~/repo
-
+      - image: 'circleci/node:latest'
     steps:
       - checkout
-
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "yarn.lock" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
-
-      - run: yarn install
-
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "yarn.lock" }}
-
-      # run tests!
-      - run: yarn test
-
-      - run: ./node_modules/.bin/codecov
-
-      - store_artifacts:
-          path: coverage
-          prefix: coverage
-
-      - store_test_results:
-          path: results
-          when: always
-
-
+      - run:
+          name: install dependencies
+          command: yarn install
+      - run:
+          name: run tests
+          command: yarn run test
+      - run:
+          name: prepare release
+          command: yarn run prepublish
+      - run:
+          name: release
+          command: yarn run semantic-release
+  upload_to_codecov:
+    docker:
+      - image: 'circleci/node:latest'
+    steps:
+      - checkout
+      - run:
+          name: install dependencies
+          command: yarn install --frozen-lockfile
+      - run:
+          name: run tests
+          command: yarn run test
+      - codecov/upload
+workflows:
+  buld_and_tests:
+    jobs:
+      - node/run:
+          pkg-manager: yarn
+          yarn-run: 'prepublish'
+          version: '16.8.0'
+      - node/test:
+          matrix:
+            parameters:
+              version:
+                - 16.8.0
+                - 15.14.0
+                - 14.17.5
+                - 13.14.0
+                - 12.22.5
+          pkg-manager: yarn
+  upload_to_codecov:
+    jobs:
+      - upload_to_codecov
+  publish_new_version:
+    jobs:
+      - release:
+          filters:
+            branches:
+              only: master
