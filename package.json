@@ -46,7 +46,7 @@
   },
   "release": {
     "branch": "master",
-    "npmPublish": false
+    "npmPublish": true
   },
   "types": "types/index.d.ts"
 }
